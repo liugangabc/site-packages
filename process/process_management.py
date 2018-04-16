@@ -122,7 +122,8 @@ class PlantSystem(object):
                 gen_log.info("child %d (pid %d) exited normally", worker.name, pid)
                 continue
 
-            if int(time.time() - self.option.workers_info[worker.name]["last_time"]) > self.option.restarts_interval:
+            if int(time.time() - self.option.workers_info[worker.name]["last_time"]) > (
+                self.option.restarts_interval + 1):
                 self.option.workers_info[worker.name]["num_restarts"] = 0
             else:
                 self.option.workers_info[worker.name]["num_restarts"] += 1

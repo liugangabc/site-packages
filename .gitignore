@@ -103,6 +103,7 @@ ENV/
 # pycharm
 .idea
 .idea/
+*.iml
 
 # pyc
 *.pyc
